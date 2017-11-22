@@ -38,8 +38,8 @@ curl -L -O -L https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/son
 
 unzip sonar-scanner-cli-%{sonar_scanner_version}-linux.zip
 rm -f sonar-scanner-cli-%{sonar_scanner_version}-linux.zip
-mv sonar-scanner-cli-%{sonar_scanner_version}-linux/* .
-rm -rf sonar-scanner-cli-%{sonar_scanner_version}-linux/
+mv sonar-scanner-%{sonar_scanner_version}-linux/* .
+rm -rf sonar-scanner-%{sonar_scanner_version}-linux/
 rm -rf jre
 sed -i s:^use_embedded_jre=true:use_embedded_jre=false:g bin/sonar-scanner
 ln -sf %{sonar_home}/bin/sonar-scanner ${RPM_BUILD_ROOT}/usr/bin/sonar-scanner
